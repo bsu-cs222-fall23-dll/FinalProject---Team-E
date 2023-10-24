@@ -9,12 +9,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Calculator {
+public class GraphingCalculator {
     private final JTextField textDisplay;
     private double firstOperand = 0;
     private String operator = "";
     private boolean startNewInput = true;
 
+    // Calculator UI Design
     public GraphingCalculator() {
         JFrame calculator = new JFrame("Calculator");
         calculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,6 +27,7 @@ public class Calculator {
         textDisplay.setHorizontalAlignment(JTextField.RIGHT);
         calculator.add(textDisplay, BorderLayout.NORTH);
 
+        // Buttons on the Calculator
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(6, 4));
 
@@ -38,6 +40,7 @@ public class Calculator {
                 "(-)", "0", ".", "="
         };
 
+        // Buttons Design
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.setFont(new Font("default", Font.PLAIN, 20));
@@ -72,38 +75,43 @@ public class Calculator {
             } else if (command.equals(".")) {
                 textDisplay.setText(textDisplay.getText() + command);
             }
+            // Operations
             else if (command.equals("=")) {
                 double secondOperand = Double.parseDouble(textDisplay.getText());
                 double result = 0;
-
                 switch (operator) {
-                    case "+":
-                        result = firstOperand + secondOperand;
-                        break;
-                    case "-":
-                        result = firstOperand - secondOperand;
-                        break;
-                    case "x":
-                        result = firstOperand * secondOperand;
-                        break;
-                    case "1/x":
-                        result = 1/firstOperand;
-                        break;
-                    case "x^2":
-                        result = (int) Math.pow(firstOperand, 2);
-                        break;
-                    case "sqrt(x)":
-                        result = Math.sqrt(firstOperand);
-                        break;
-                    case "%":
-                        result = firstOperand/100;
-                    case "/":
+                    // addition
+                    case "+" -> result = firstOperand + secondOperand;
+
+                    // subtraction
+                    case "-" -> result = firstOperand - secondOperand;
+
+                    // multiplication
+                    case "x" -> result = firstOperand * secondOperand;
+                    case "1/x" -> {
+                        if (firstOperand != 0) {
+                            result = 1 / firstOperand;
+                        } else {
+                            textDisplay.setText("Error");
+                        }
+                    }
+                    // power
+                    case "x^2" -> result = (int) Math.pow(firstOperand, 2);
+
+                    // square root
+                    case "sqrt(x)" -> result = Math.sqrt(firstOperand);
+
+                    // percentage
+                    case "%" -> result = firstOperand / 100;
+
+                    // division
+                    case "/" -> {
                         if (secondOperand != 0) {
                             result = firstOperand / secondOperand;
                         } else {
                             textDisplay.setText("Error");
                         }
-                        break;
+                    }
                 }
 
                 textDisplay.setText(String.valueOf(result));
