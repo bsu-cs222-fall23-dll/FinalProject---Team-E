@@ -1,4 +1,8 @@
-Author: Sung Hoo Hong, David Chen
+/*
+Authors: Sung Hoo Hong, David Chen, Alexander Bousman
+
+Current iteration operates as a standard arithmetic calculator. Advanced features to be added later.
+*/
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +15,7 @@ public class Calculator {
     private String operator = "";
     private boolean startNewInput = true;
 
-    public Calculator() {
+    public GraphingCalculator() {
         JFrame calculator = new JFrame("Calculator");
         calculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         calculator.setSize(400,560);
@@ -116,6 +120,6 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-        new Calculator();
+        new GraphingCalculator();
     }
 }
