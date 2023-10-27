@@ -66,7 +66,9 @@ public class GraphingCalculator {
                     startNewInput = false;
                 }
                 textDisplay.setText(textDisplay.getText() + command);
-            } else if (command.equals("C")) {
+            } 
+            // Deletion Interaction
+            else if (command.equals("C")) {
                 textDisplay.setText("");
                 firstOperand = 0;
                 operator = "";
