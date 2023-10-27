@@ -33,6 +33,7 @@ public class GraphingCalculator {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(6, 4));
 
+        // Buttons Layout
         String[] buttonLabels = {
                 "%", "CE", "C", "DEL",
                 "1/x", "x^2", "sqrt(x)", "/",
