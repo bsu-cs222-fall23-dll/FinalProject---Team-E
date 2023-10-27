@@ -128,6 +128,7 @@ public class GraphingCalculator {
         }
     }
 
+    // Display the calculator
     public static void main(String[] args) {
         new GraphingCalculator();
     }
