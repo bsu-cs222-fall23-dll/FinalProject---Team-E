@@ -59,7 +59,7 @@ public class GraphingCalculator {
         public void actionPerformed(ActionEvent e) {
             String command = e.getActionCommand();
 
-            // Number Interaction
+            // Number Interaction function
             if (command.matches("[0-9]")) {
                 if (startNewInput) {
                     textDisplay.setText("");
@@ -84,13 +84,13 @@ public class GraphingCalculator {
                 double secondOperand = Double.parseDouble(textDisplay.getText());
                 double result = 0;
                 switch (operator) {
-                    // addition
+                    // addition function
                     case "+" -> result = firstOperand + secondOperand;
 
-                    // subtraction
+                    // subtraction function
                     case "-" -> result = firstOperand - secondOperand;
 
-                    // multiplication
+                    // multiplication function
                     case "x" -> result = firstOperand * secondOperand;
                     case "1/x" -> {
                         if (firstOperand != 0) {
@@ -99,16 +99,16 @@ public class GraphingCalculator {
                             textDisplay.setText("Error");
                         }
                     }
-                    // power
+                    // power function
                     case "x^2" -> result = (int) Math.pow(firstOperand, 2);
 
-                    // square root
+                    // square root function
                     case "sqrt(x)" -> result = Math.sqrt(firstOperand);
 
-                    // percentage
+                    // percentage function
                     case "%" -> result = firstOperand / 100;
 
-                    // division
+                    // division function
                     case "/" -> {
                         if (secondOperand != 0) {
                             result = firstOperand / secondOperand;
