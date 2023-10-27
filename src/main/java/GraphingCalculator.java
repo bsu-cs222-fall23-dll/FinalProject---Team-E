@@ -76,7 +76,9 @@ public class GraphingCalculator {
                 textDisplay.setText("");
                 firstOperand = 0;
                 operator = "";
-            } else if (command.equals("(-)")) {
+            }
+            // Negative Interaction
+            else if (command.equals("(-)")) {
                 textDisplay.setText("-" + textDisplay.getText());
             } else if (command.equals(".")) {
                 textDisplay.setText(textDisplay.getText() + command);
