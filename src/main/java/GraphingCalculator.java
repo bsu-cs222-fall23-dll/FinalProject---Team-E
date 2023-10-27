@@ -18,6 +18,7 @@ public class GraphingCalculator {
 
     // Calculator UI Design
     public GraphingCalculator() {
+        // Calculator Frame Design
         JFrame calculator = new JFrame("Calculator");
         calculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         calculator.setSize(400,560);
