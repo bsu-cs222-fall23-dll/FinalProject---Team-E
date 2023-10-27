@@ -80,7 +80,9 @@ public class GraphingCalculator {
             // Negative Interaction
             else if (command.equals("(-)")) {
                 textDisplay.setText("-" + textDisplay.getText());
-            } else if (command.equals(".")) {
+            } 
+            // Decimal Interaction
+            else if (command.equals(".")) {
                 textDisplay.setText(textDisplay.getText() + command);
             }
             // Operations
@@ -121,7 +123,6 @@ public class GraphingCalculator {
                         }
                     }
                 }
-
                 textDisplay.setText(String.valueOf(result));
                 startNewInput = true;
             } else {
