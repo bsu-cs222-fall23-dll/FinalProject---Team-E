@@ -59,6 +59,7 @@ public class GraphingCalculator {
         public void actionPerformed(ActionEvent e) {
             String command = e.getActionCommand();
 
+            // Number Interaction
             if (command.matches("[0-9]")) {
                 if (startNewInput) {
                     textDisplay.setText("");
