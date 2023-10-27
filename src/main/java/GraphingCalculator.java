@@ -4,6 +4,7 @@ Authors: Sung Hoo Hong, David Chen, Alexander Bousman
 Current iteration operates as a standard arithmetic calculator. Advanced features to be added later.
 */
 
+// import necessary libraries for UI Design
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
